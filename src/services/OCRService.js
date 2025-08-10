@@ -46,7 +46,7 @@ export class OCRService {
     // This is a simplified parser - in a real application, you'd want more sophisticated parsing
     // based on the actual format of your timetables
     
-    const lines = text.split('\n').filter(line => line.trim().length > 0);
+    // const lines = text.split('\n').filter(line => line.trim().length > 0);
     const sections = {
       super1: {},
       super2: {},

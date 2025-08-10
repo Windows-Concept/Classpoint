@@ -10,7 +10,7 @@ const Widget = ({ selectedSection, timetableData }) => {
   const [nextClass, setNextClass] = useState(null);
   const [isMinimized, setIsMinimized] = useState(false);
   const [showReminder, setShowReminder] = useState(false);
-  const [settings, setSettings] = useState(StorageService.getSettings());
+  const [settings] = useState(StorageService.getSettings());
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -40,7 +40,7 @@ const Widget = ({ selectedSection, timetableData }) => {
         setShowReminder(false);
       }
     }
-  }, [timetableData, selectedSection, currentTime]);
+  }, [timetableData, selectedSection, currentTime, settings.reminderTime, settings.soundEnabled]);
 
   const closeWidget = () => {
     if (window.require) {

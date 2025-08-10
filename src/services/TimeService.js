@@ -11,9 +11,6 @@ export class TimeService {
 
   // Get the current class (if any)
   static getCurrentClass(schedule) {
-    const now = new Date();
-    const currentTime = this.formatTime(now);
-
     return schedule.find(classItem => 
       this.isCurrentTime(classItem.startTime, classItem.endTime)
     ) || null;
