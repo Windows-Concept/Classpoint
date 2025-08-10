@@ -19,8 +19,8 @@ dist/*.rpm
 dist/builder-debug.yml
 dist/builder-effective-config.yaml
 
-# Keep the portable zip for releases
-!dist/ClassPoint-Portable.zip
+# Exclude the portable zip (too large for GitHub)
+dist/ClassPoint-Portable.zip
 
 # Environment files
 .env
