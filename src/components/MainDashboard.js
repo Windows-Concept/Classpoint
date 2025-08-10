@@ -8,7 +8,8 @@ import {
   EyeOff,
   RefreshCw,
   BookOpen,
-  MapPin
+  MapPin,
+  Cloud
 } from 'lucide-react';
 import TimetableUploader from './TimetableUploader';
 import SettingsModal from './SettingsModal';
@@ -87,6 +88,16 @@ const MainDashboard = ({
     }
   };
 
+  const openQuickdrop = () => {
+    if (window.require) {
+      const { shell } = window.require('electron');
+      shell.openExternal('https://quickdrop-drab.vercel.app/');
+    } else {
+      // Fallback for web version
+      window.open('https://quickdrop-drab.vercel.app/', '_blank');
+    }
+  };
+
   const formatTime = (date) => {
     return date.toLocaleTimeString('en-US', {
       hour: '2-digit',
@@ -127,6 +138,15 @@ const MainDashboard = ({
               </div>
               
               <div className="flex items-center space-x-2">
+                <button
+                  onClick={openQuickdrop}
+                  className="flex items-center space-x-2 px-3 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition-colors text-sm font-medium"
+                  title="Open Quickdrop - File Sharing App"
+                >
+                  <Cloud className="w-4 h-4" />
+                  <span>Quickdrop</span>
+                </button>
+                
                 <button
                   onClick={toggleWidget}
                   className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
