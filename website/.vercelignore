@@ -1,0 +1,19 @@
+# Ignore everything from parent directory
+../node_modules
+../dist
+../src
+../public
+../.git
+../build
+../coverage
+../logs
+../*.log
+../tmp
+../temp
+
+# Keep only website files
+!index.html
+!quick-start.html
+!vercel.json
+!package.json
+!README.md
