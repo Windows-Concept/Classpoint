@@ -7,20 +7,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Build outputs (but keep the portable zip)
-dist/win-unpacked/
-dist/mac/
-dist/linux-unpacked/
-dist/*.exe
-dist/*.dmg
-dist/*.AppImage
-dist/*.deb
-dist/*.rpm
-dist/builder-debug.yml
-dist/builder-effective-config.yaml
-
-# Exclude the portable zip (too large for GitHub)
-dist/ClassPoint-Portable.zip
+# Build outputs - exclude all dist folder contents
+dist/
 
 # Environment files
 .env
